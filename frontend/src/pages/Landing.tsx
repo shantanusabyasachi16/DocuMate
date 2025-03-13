@@ -18,20 +18,20 @@ const LandingPage = () => {
       <Spotlight />
       <div className="landing-container">
         <div className="hero-section">
-          <h1 className="text-6xl md:text-6xl mb-12 font-bold mr-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
+          <h1 className="text-7xl md:text-6xl mb-12 font-bold mr-12 bg-clip-text text-transparent bg-gradient-to-b from-gray-100 to-green-900">
             💬 DocuMate
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
             AI-Powered Documentation Generator
           </h2>
-          <p className="text-lg md:text-xl text-slate-200 mb-15 max-w-2xl mx-auto text-center">
+          <p className="text-lg md:text-xl text-slate-300 mb-15 max-w-2xl mx-auto text-center">
             Transform your code into comprehensive documentation in seconds.
             DocuMate uses advanced AI to analyze your code and generate clear,
             detailed documentation automatically.
           </p>
           <div className="mb-35 text-center">
             <Link to="/converter">
-              <Button size="lg" className="group  ">
+              <Button  size="lg" className="group text-white  ">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -63,14 +63,14 @@ const LandingPage = () => {
           </div>
           <div className="mt-16 text-center">
             <Link to="/converter">
-              <Button size="lg" variant="secondary" className="group">
+              <Button size="lg" variant="secondary" className="group text-white">
                 Try DocuMate Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
         </div>
-        <footer className="border-t mt-15 border-slate-800 py-10">
+        <footer className="border-t mt-25 border-slate-800 py-10">
           <div className="container mx-auto px-4 text-center text-slate-400">
             <p>© {new Date().getFullYear()} DocuMate. All rights reserved.</p>
           </div>

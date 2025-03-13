@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Textarea } from "../components/TextArea";
@@ -8,44 +8,42 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function ConvertedPage() {
-  // State for the input code and API response
+
   const [codeInput, setCodeInput] = useState("");
   const [apiResponse, setApiResponse] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false); 
 
-  // Function to handle API call
+
   const handleGenerateDocumentation = async () => {
     if (!codeInput.trim()) {
       alert("Please enter some code to generate documentation.");
       return;
     }
 
-    setIsLoading(true); // Start loading
+    setIsLoading(true); 
     try {
-      // Make the API call using axios
+    
       const response = await axios.post(
         "http://localhost:8000/genai/documate",
         { prompt: codeInput },
         
       );
 
-      // Set the API response
+      
       setApiResponse(response.data.message); // Use response.data.message
-      console.log(response);
+      //console.log(response);
       //console.log(response.data);
       
       
     } catch (error) {
       console.error("Error:", error);
       if (axios.isAxiosError(error)) {
-        // Handle Axios-specific errors
         setApiResponse(error.response?.data?.message || "An error occurred while generating documentation.");
       } else {
-        // Handle generic errors
-        setApiResponse("An error occurred while generating documentation.");
+       setApiResponse("An error occurred while generating documentation.");
       }
     } finally {
-      setIsLoading(false); // Stop loading
+      setIsLoading(false);
     }
   };
 
@@ -54,9 +52,9 @@ export default function ConvertedPage() {
       <Spotlight />
       <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
         <div className="container mx-auto px-4 py-8">
-          <div className="mb-8">
+          <div className="mb-8 ">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="group">
+              <Button variant="ghost" size="sm" className="group text-white">
                 <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 Back to Home
               </Button>
@@ -64,15 +62,17 @@ export default function ConvertedPage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">Generate Documentation</h1>
-            <p className="text-slate-300 mb-8 text-center">
-              Paste your code below and let DocuMate generate comprehensive documentation for you.
+          <h1 className="text-6xl md:text-6xl mb-12 font-bold mr-12 bg-clip-text text-transparent bg-gradient-to-b from-gray-100 to-green-900">
+          Generate Documentation
+          </h1>
+            <p className="text-slate-300 mb-8 text-center text-xl">
+              Paste your code below and let DocuMate <br /><span>generate comprehensive documentation for you.</span>
             </p>
 
             <Card className="bg-slate-800 border-slate-700">
               <CardHeader>
                 <CardTitle>Code Input</CardTitle>
-                <CardDescription>Paste your code here or upload a file to generate documentation</CardDescription>
+                
               </CardHeader>
               <CardContent>
                 <Textarea
@@ -80,20 +80,22 @@ export default function ConvertedPage() {
                   className="min-h-[300px] bg-slate-900 border-slate-700 font-mono"
                   value={codeInput}
                   onChange={(e) => setCodeInput(e.target.value)}
-                  disabled={isLoading} // Disable input during loading
+                  disabled={isLoading}
                 />
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="outline" disabled={isLoading}>
-                  Upload File
-                </Button>
-                <Button onClick={handleGenerateDocumentation} disabled={isLoading}>
-                  {isLoading ? "Generating..." : "Generate Documentation"}
-                </Button>
+              <Button variant="outline" onClick={() => setCodeInput ("")}>
+            Clear Code
+          </Button>
+          <Button onClick={handleGenerateDocumentation} disabled={isLoading} className="flex items-center gap-2 ">
+  {isLoading ? (
+    <>Generating...</>) : (<>Generate Documentation <Sparkles className="animate-glow" /></>)}
+</Button>
+
               </CardFooter>
             </Card>
 
-            {/* Display API Response */}
+            {/* to display the Api response */}
             {apiResponse && (
               <Card className="bg-slate-800 border-slate-700 mt-8">
                 <CardHeader>
