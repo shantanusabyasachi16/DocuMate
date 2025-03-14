@@ -17,6 +17,9 @@ import removeMarkdown from "remove-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+
+
+
 export default function ConvertedPage() {
   const [codeInput, setCodeInput] = useState("");
   const [apiResponse, setApiResponse] = useState("");
@@ -94,6 +97,7 @@ export default function ConvertedPage() {
                   <SyntaxHighlighter
                     language="javascript"
                     style={dracula}
+                    showLineNumbers
                     customStyle={{
                       minHeight: "300px",
                       borderRadius: "8px",
