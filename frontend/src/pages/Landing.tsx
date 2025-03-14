@@ -31,7 +31,7 @@ const LandingPage = () => {
           </p>
           <div className="mb-35 text-center">
             <Link to="/converter">
-              <Button  size="lg" className="group text-white  ">
+              <Button  size="lg" className="group text-white  !bg-black !border !border-gray-900 !rounded-full ">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -63,7 +63,7 @@ const LandingPage = () => {
           </div>
           <div className="mt-16 text-center">
             <Link to="/converter">
-              <Button size="lg" variant="secondary" className="group text-white">
+              <Button size="lg" variant="secondary" className="group text-white  !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full ">
                 Try DocuMate Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

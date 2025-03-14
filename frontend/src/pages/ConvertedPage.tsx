@@ -54,7 +54,7 @@ export default function ConvertedPage() {
         <div className="container mx-auto px-4 py-8">
           <div className="mb-8 ">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="group text-white">
+              <Button variant="ghost" size="sm" className="group text-white !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full">
                 <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 Back to Home
               </Button>
@@ -69,7 +69,7 @@ export default function ConvertedPage() {
               Paste your code below and let DocuMate <br /><span>generate comprehensive documentation for you.</span>
             </p>
 
-            <Card className="bg-slate-800 border-slate-700">
+            <Card className=" border-slate-900">
               <CardHeader>
                 <CardTitle>Code Input</CardTitle>
                 
@@ -84,10 +84,10 @@ export default function ConvertedPage() {
                 />
               </CardContent>
               <CardFooter className="flex justify-between">
-              <Button variant="outline" onClick={() => setCodeInput ("")}>
+              <Button className="!bg-black" variant="outline" onClick={() => setCodeInput ("")}>
             Clear Code
           </Button>
-          <Button onClick={handleGenerateDocumentation} disabled={isLoading} className="flex items-center gap-2 ">
+          <Button onClick={handleGenerateDocumentation} disabled={isLoading} className="flex items-center gap-2 !bg-black ">
   {isLoading ? (
     <>Generating...</>) : (<>Generate Documentation <Sparkles className="animate-glow" /></>)}
 </Button>
@@ -97,7 +97,7 @@ export default function ConvertedPage() {
 
             {/* to display the Api response */}
             {apiResponse && (
-              <Card className="bg-slate-800 border-slate-700 mt-8">
+              <Card className=" border-slate-900 mt-8">
                 <CardHeader>
                   <CardTitle>Generated Documentation</CardTitle>
                   <CardDescription>Your documentation is ready!</CardDescription>
@@ -110,7 +110,7 @@ export default function ConvertedPage() {
               </Card>
             )}
 
-            <div className="mt-12 text-center text-slate-400">
+            <div className="mt-12 text-center text-slate-300">
               <p>DocuMate supports JavaScript, TypeScript, Python, Java, C#, and more.</p>
             </div>
           </div>
