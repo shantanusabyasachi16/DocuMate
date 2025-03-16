@@ -19,16 +19,14 @@ const LandingPage = () => {
       <Spotlight />
       <div className="landing-container pt-25">
         <div className="hero-section">
-        
-        <h2 className="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-  AI-Powered  <br /> 
-  <span className="text-6xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-purple-900/90 to-teal-900/80 ">
-    Documentation Generator
-  </span> <br /> 
-  <span className="text-5xl font-bold">
-    Made Simple
-  </span>
-</h2>
+          <h2 className="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+            AI-Powered <br />
+            <span className="text-6xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-purple-900/90 to-teal-900/80 ">
+              Documentation Generator
+            </span>{" "}
+            <br />
+            <span className="text-5xl font-bold">Made Simple</span>
+          </h2>
 
           <p className="text-lg  text-slate-300 mb-15 max-w-2xl mx-auto text-center">
             Transform your code into comprehensive documentation in seconds.
@@ -37,7 +35,10 @@ const LandingPage = () => {
           </p>
           <div className="mb-35 text-center">
             <Link to="/converter">
-              <Button size="lg" className="group text-white !bg-black !border !border-gray-900 !rounded-full">
+              <Button
+                size="lg"
+                className="group text-white !bg-black !border !border-gray-900 !rounded-full"
+              >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -67,15 +68,20 @@ const LandingPage = () => {
               />
             </div>
           </div>
-          <div className="mt-16 text-center">
+          <div className="mt-16 text-center pb-15">
             <Link to="/converter">
-              <Button size="lg" variant="secondary" className="group text-white !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="group text-white !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full"
+              >
                 Try DocuMate Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
         </div>
+
         <footer className="border-t mt-25 border-slate-800 py-10">
           <div className="container mx-auto px-4 text-center text-slate-400">
             <p>© {new Date().getFullYear()} DocuMate. All rights reserved.</p>

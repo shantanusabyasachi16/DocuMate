@@ -62,10 +62,10 @@ export default function ConvertedPage() {
     <>
     <Navbar/>
       <Spotlight />
-      {/* Add the Toaster component */}
+      
       <Toaster position="bottom-right" />
 
-      <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white pt-10">
+      <div className="min-h-screen bg-gradient-to-b from-black text-white pt-10">
         <div className="container mx-auto px-4 py-8">
           
           <div className="max-w-4xl mx-auto">
@@ -75,7 +75,7 @@ export default function ConvertedPage() {
               <span> comprehensive documentation for you.</span>
             </p>
 
-            <Card className="border-black-900">
+            <Card className="border-slate-900">
               <CardHeader>
                 <CardTitle>Code Input</CardTitle>
               </CardHeader>
@@ -101,7 +101,7 @@ export default function ConvertedPage() {
                   {/* Transparent Textarea Overlay */}
                   <textarea
                     placeholder="// Paste your code here..."
-                    className="absolute inset-0 w-full h-full p-4 bg-transparent text-transparent caret-white resize-none font-mono"
+                    className="absolute inset-0 w-full h-full p-4 bg-bluee-900/60 text-transparent caret-white resize-none font-mono"
                     value={codeInput}
                     onChange={(e) => setCodeInput(e.target.value)}
                     disabled={isLoading}
@@ -146,7 +146,7 @@ export default function ConvertedPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <pre className="text-slate-100 font-bold whitespace-pre-wrap bg-slate-900 p-4 rounded-md">
+                  <pre className="text-slate-100 font-bold whitespace-pre-wrap bg-slate-900/60 p-4 rounded-md">
                     {apiResponse}
                   </pre>
                 </CardContent>
