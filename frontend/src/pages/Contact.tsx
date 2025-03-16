@@ -21,7 +21,7 @@ const ContactPage = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-black-600/50 to-teal-900/30 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
               <Mail className="h-10 w-10 text-primary mb-4" />
               <h2 className="text-xl font-semibold mb-3">Email Us</h2>
               <p className="text-slate-300">
@@ -34,7 +34,7 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-black-600/50 to-teal-900/30 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
               <Phone className="h-10 w-10 text-primary mb-4" />
               <h2 className="text-xl font-semibold mb-3">Call Us</h2>
               <p className="text-slate-300">
@@ -44,7 +44,7 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-black-600/50 to-teal-900/30 backdrop-blur-sm border border-slate-700 rounded-lg p-6">
               <MessageCircle className="h-10 w-10 text-primary mb-4" />
               <h2 className="text-xl font-semibold mb-3">Social Media</h2>
               <p className="text-slate-300">

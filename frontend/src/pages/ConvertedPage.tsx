@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import { Spotlight } from "../components/Spotlight-New";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import removeMarkdown from "remove-markdown";
@@ -25,7 +25,13 @@ export default function ConvertedPage() {
   const [codeInput, setCodeInput] = useState("");
   const [apiResponse, setApiResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const docRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (apiResponse && docRef.current) {
+      docRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [apiResponse]);
   const handleGenerateDocumentation = async () => {
     if (!codeInput.trim()) {
       toast.error("Please enter some code to generate documentation.");
@@ -138,6 +144,7 @@ export default function ConvertedPage() {
 
             {/* Display the API response */}
             {apiResponse && (
+              <div ref={docRef}> 
               <Card className="border-slate-900 mt-8">
                 <CardHeader>
                   <CardTitle>Generated Documentation</CardTitle>
@@ -146,7 +153,7 @@ export default function ConvertedPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <pre className="text-slate-100 font-bold whitespace-pre-wrap bg-slate-900/60 p-4 rounded-md">
+                  <pre className="text-slate-100 font-extrabold whitespace-pre-wrap bg-slate-900/60 p-4 rounded-md">
                     {apiResponse}
                   </pre>
                 </CardContent>
@@ -165,6 +172,7 @@ export default function ConvertedPage() {
                   </Button>
                 </CardFooter>
               </Card>
+              </div>
             )}
 
             <div className="mt-12 text-center text-slate-300">

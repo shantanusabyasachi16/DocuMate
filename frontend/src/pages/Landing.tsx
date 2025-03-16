@@ -46,7 +46,7 @@ const LandingPage = () => {
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-              How DocuMate Works
+              How DocuMate Works ?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <FeatureCard
@@ -94,10 +94,10 @@ const LandingPage = () => {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6 transition-all hover:bg-slate-900 hover:border-primary/50">
+    <div className="bg-black-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-6 transition-all hover:bg-gradient-to-r from-black-600/50 to-teal-900/50 hover:border-primary/50">
       <div className="mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-slate-300">{description}</p>
+      <p className="text-slate-100">{description}</p>
     </div>
   );
 }
