@@ -3,11 +3,11 @@ import { ArrowRight, Code, FileText, Zap } from "lucide-react";
 import "../App.css";
 import { Spotlight } from "../components/Spotlight-New";
 import { Button } from "../components/ui/button";
-import { ReactNode } from "react"; 
-//which is a type used in TypeScript to represent anything that can be rendered inside a React component.
-//TypeScript doesn't know the type automatically. Without ReactNode, it assumes any, which is unsafe.
+import { ReactNode } from "react";
+import Navbar from "./Navbar";
+
 interface FeatureCardProps {
-  icon: ReactNode; //allows valid react element
+  icon: ReactNode;
   title: string;
   description: string;
 }
@@ -15,23 +15,29 @@ interface FeatureCardProps {
 const LandingPage = () => {
   return (
     <>
+      <Navbar />
       <Spotlight />
-      <div className="landing-container">
+      <div className="landing-container pt-25">
         <div className="hero-section">
-          <h1 className="text-7xl md:text-6xl mb-12 font-bold mr-12 bg-clip-text text-transparent bg-gradient-to-b from-gray-100 to-green-900">
-            💬 DocuMate
-          </h1>
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-            AI-Powered Documentation Generator
-          </h2>
-          <p className="text-lg md:text-xl text-slate-300 mb-15 max-w-2xl mx-auto text-center">
+        
+        <h2 className="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+  AI-Powered  <br /> 
+  <span className="text-6xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-purple-900/90 to-teal-900/80 ">
+    Documentation Generator
+  </span> <br /> 
+  <span className="text-5xl font-bold">
+    Made Simple
+  </span>
+</h2>
+
+          <p className="text-lg  text-slate-300 mb-15 max-w-2xl mx-auto text-center">
             Transform your code into comprehensive documentation in seconds.
             DocuMate uses advanced AI to analyze your code and generate clear,
             detailed documentation automatically.
           </p>
           <div className="mb-35 text-center">
             <Link to="/converter">
-              <Button  size="lg" className="group text-white  !bg-black !border !border-gray-900 !rounded-full ">
+              <Button size="lg" className="group text-white !bg-black !border !border-gray-900 !rounded-full">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -63,7 +69,7 @@ const LandingPage = () => {
           </div>
           <div className="mt-16 text-center">
             <Link to="/converter">
-              <Button size="lg" variant="secondary" className="group text-white  !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full ">
+              <Button size="lg" variant="secondary" className="group text-white !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full">
                 Try DocuMate Now
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

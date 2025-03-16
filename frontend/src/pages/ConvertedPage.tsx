@@ -1,5 +1,5 @@
-import { ArrowLeft, Sparkles, Copy } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Sparkles, Copy } from "lucide-react";
+
 import { Button } from "../components/ui/button";
 import {
   Card,
@@ -16,6 +16,7 @@ import toast, { Toaster } from "react-hot-toast";
 import removeMarkdown from "remove-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Navbar from "./Navbar";
 
 
 
@@ -59,32 +60,19 @@ export default function ConvertedPage() {
 
   return (
     <>
+    <Navbar/>
       <Spotlight />
       {/* Add the Toaster component */}
       <Toaster position="bottom-right" />
 
-      <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white">
+      <div className="min-h-screen bg-gradient-to-b from-black to-slate-900 text-white pt-10">
         <div className="container mx-auto px-4 py-8">
-          <div className="mb-8">
-            <Link to="/">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="group text-white !bg-black boder-white !bg-black !border !border-gray-900 !rounded-full"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-
+          
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-6xl mb-12 font-bold mr-12 bg-clip-text text-transparent bg-gradient-to-b from-gray-100 to-green-900">
-              Generate Documentation
-            </h1>
-            <p className="text-slate-300 mb-8 text-center text-xl">
-              Paste your code below and let DocuMate <br />
-              <span>generate comprehensive documentation for you.</span>
+          
+            <p className="text-slate-200 mb-8 text-center text-2xl">
+              Paste your code below and let DocuMate generate <br />
+              <span> comprehensive documentation for you.</span>
             </p>
 
             <Card className="border-black-900">
