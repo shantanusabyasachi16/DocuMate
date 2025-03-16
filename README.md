@@ -36,13 +36,7 @@ DocuMate is your ultimate AI-powered assistant for generating comprehensive, pro
 ## Demo video
 
 -[Documate](https://youtu.be/pFoXuzvL5ZQ?si=_aNHi1O6DpdiNkKi)
-## Getting Started
 
-To get a local copy up and running, follow these simple steps:
-
-1. Clone the repository.
-2. Install dependencies: `npm install`.
-3. Start the development server: `npm start`.
 
 ## Feedback
 I would love to hear your feedback! Please let me know if you have any comments, suggestions, or issues.
